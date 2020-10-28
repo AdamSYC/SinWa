@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<link rel="icon" href="image/logonotitle.png">
+
+<head>
+    <title>Desinger-Curly</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.flex-photo-gallery.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* height: 300vh; */
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .wrapper {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 138px;
+            padding-right: 138px;
+        }
+
+        h3 {
+            color: #AFAFAF;
+            margin: 0 24px 0 24px;
+        }
+
+        h5 {
+            color: #AFAFAF;
+            margin: 50px 0 30px 0;
+        }
+
+        p {
+            color: #AFAFAF;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        /* ----------------nav--------------- */
+
+        .main-nav {
+            position: fixed;
+            background: #ffff;
+            width: 100%;
+            height: 80px;
+            box-shadow: -1px 3px 10px #aaaaaa;
+            z-index: 1;
+            top: 0;
+        }
+
+        .nav-left {
+            width: 450px;
+            height: 80px;
+        }
+
+        .nav-right {
+            min-height: 80px;
+        }
+
+        .logoWithTitle{
+            max-height: 28px;
+        }
+
+        .ul-content {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav div ul li a {
+            color: #AFAFAF;
+            font-weight: 100;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: .5s;
+        }
+
+        nav div ul li a:hover {
+            color: #FFB45A;
+            text-decoration: none;
+        }
+
+        nav div a {
+            color: #FFB45A;
+            margin: 0 0 0 10px;
+            transition: .5s;
+        }
+
+        nav div a:hover {
+            text-decoration: none;
+            color: #AFAFAF;
+        }
+
+        nav.fixed {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .nav-web {
+            max-width: 25px;
+        }
+
+        .nav-web:hover {
+            filter: drop-shadow(4px 4px 2px #e6e6e6);
+        }
+
+        @media screen and (max-width:960px) {
+            nav div ul li a {
+                display: none;
+                /* visibility: hidden; */
+            }
+
+            nav div a {
+                display: none;
+                /* visibility: hidden; */
+            }
+
+            /* .nav-web {
+                visibility: visible;
+            } */
+        }
+
+        @media screen and (min-width:961px) {
+            .nav-web {
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+        @media screen and (max-width:760px) {
+            .login {
+                display: none;
+            }
+        }
+
+        /* ----------------nav MB--------------- */
+
+        /* .MB-TOP {
+            position: fixed;
+            top: -60px
+        } */
+
+        .MB-content {
+            visibility: hidden;
+            transition: .1s;
+        }
+
+        .MB2-content {
+
+            visibility: visible;
+            box-shadow: 1px 4px 8px #aaaaaa;
+
+        }
+
+        nav aside a {
+            border: 5px solid #ffff;
+            border-radius: 0 !important;
+        }
+
+        /* --------------------btn ---------------------*/
+
+        .btn {
+            background: #FFCE94;
+            color: #ffff;
+            transition: .5s;
+        }
+
+        .btn:hover {
+            background: #FFF5E9;
+            color: #AFAFAF;
+        }
+
+        .btn2 {
+            background: #ffffff;
+            color: #AFAFAF;
+            transition: .5s;
+        }
+
+        .btn2:hover {
+            background: #FFCE94;
+            color: #ffff;
+        }
+
+        /* --------------------photo light ---------------------*/
+
+        #gallery {
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* -----------------------section---------------------- */
+
+        .topbg {
+            margin-top: 140px;
+        }
+
+        .poimg {
+            background: url("image/designerCurly.jpg") center center;
+            background-size: cover;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            /* box-shadow: 1px 3px 10px black; */
+            transition: .5s;
+        }
+
+        .poimg:hover {
+            width: 200px;
+            height: 200px;
+            box-shadow: 1px 3px 10px black;
+        }
+
+        .box {
+            border-top: 1px solid #AFAFAF;
+            width: 80px;
+        }
+
+        .box2 {
+            border-top: 1px solid #AFAFAF;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .textName {
+            margin-top: 50px;
+        }
+
+        .infoIcon {
+            width: 25px;
+        }
+
+        .iconBorder {
+            width: 225px;
+            margin-top: 50px;
+        }
+
+        .cardP {
+            color: #AFAFAF;
+            font-weight: 100;
+            margin: 30px 0 30px 0;
+            line-height: 40px;
+        }
+
+        /* -----------------------aside---------------------- */
+
+        aside div h5 {
+            text-align: center;
+        }
+
+        .jointBox {
+            margin: 0 auto;
+            padding: 0;
+            /* display: flex; */
+            flex-direction: column;
+            align-content: center;
+        }
+
+        aside div a {
+            text-align: center;
+            color: #FFB45A;
+            /* margin-right: 20px; */
+            transition: .5s;
+            font-weight: 700;
+            padding-top: 0 !important;
+        }
+
+        aside div a:hover {
+            color: #AFAFAF;
+            text-decoration: none;
+
+        }
+
+        .tab-content div {
+            display: none;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .tab-content div:first-child {
+            display: block;
+        }
+
+        .noMargin {
+            margin: 0;
+        }
+
+        @media screen and (max-width:970px) {
+            .proRWD {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 100px;
+            }
+        }
+
+
+        /* ----------------footer----------------- */
+
+        footer {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        footer article {
+            padding: 60px;
+        }
+
+        .footerBox {
+            width: 100%;
+            border-top: 1px solid #AFAFAF;
+        }
+
+        .footerLogo {
+            width: 100px;
+            height: 100px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .footer-content {
+            width: 100%;
+            height: 100%;
+            /* margin-left: 40px; */
+        }
+
+        .footerIcon-content {
+            width: 156px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footerIcon {
+            width: 25px;
+            /* margin-right: 40px; */
+        }
+
+        .footerIconline {
+            width: 25px;
+        }
+
+        footer article span {
+            font-size: 12px;
+            color: #AFAFAF;
+            font-weight: 100;
+            line-height: 25px;
+        }
+
+        .footerPborder {
+            font-weight: 400;
+        }
+
+        footer article span a:hover {
+            color: #FFB45A;
+        }
+
+        .borderDown {
+            margin-bottom: 50px;
+        }
+
+        .ccRes {
+            font-size: 12px;
+            color: #AFAFAF;
+            font-weight: 100;
+        }
+
+        .ccResBG {
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width:1024px) {
+            .footerRWD {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .footerIcon-content {
+                margin: 0 auto;
+            }
+
+            .footer-content {
+                margin: 30px 0 30px 0;
+
+            }
+
+            .borderTop {
+                margin-top: 50px;
+            }
+
+            .ccResBG {
+                margin-bottom: 50px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="main-nav ">
+        <div class="wrapper d-flex  align-items-center justify-content-between">
+            <div class="nav-left d-flex  align-items-center">
+                <img class="logoWithTitle" src="image/logowithtitle.png" alt="">
+                <ul class="ul-content d-flex  align-items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Info.html">Projects</a></li>
+                    <li><a href="Artists.html">Designers</a></li>
+                    <li><a class="contactArrange" href="">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right d-flex align-items-center">
+                <div class="login">
+                    <!-- <a href="">登入</a> -->
+                    <!-- <a href="">註冊</a> -->
+                </div>
+                <div class="nav-web" href=""><img src="image/Menu.svg" alt=""></div>
+            </div>
+        </div>
+        <aside class="MB-TOP d-flex MB-content flex-column">
+            <a name="" id="" class="btn" href="index.html" role="button">Home</a>
+            <a name="" id="" class="btn" href="Info.html" role="button">Projects</a>
+            <a name="" id="" class="btn" href="Artists.html" role="button">Designers</a>
+            <a name="" id="" class="btn" href="" role="button">Contact</a>
+        </aside>
+    </nav>
+
+    <section class="wrapper d-flex flex-column align-items-center">
+        <div class="topbg">
+            <div class="poimg"></div>
+        </div>
+        <div class="textName d-flex align-items-center element4">
+            <div class="box"></div>
+            <h3>Curly Xuan</h3>
+            <div class="box"></div>
+        </div>
+        <div class="iconBorder d-flex flex-row justify-content-between element">
+            <a href=""><img class="infoIcon" src="image/facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/curlyxuan/"><img class="infoIcon" src="image/instagram.png" alt=""></a>
+            <a href=""><img class="infoIcon" src="image/behance.png" alt=""></a>
+            <a href=""><img class="infoIcon" src="image/dropbox.png" alt=""></a>
+        </div>
+        <span class="cardP">1993年生於新竹，Curly
+             室內設計 | 生活美學 | 貓友日常<br>
+             空間是人文、生活及情感交流的場域，針對每個使用者提供完善的空間規劃專業及設計能力，整體風格及氛圍的呈現， 使用者的獨特品味與喜好，並堅持細節的處理。透過色彩、材質紋理及質地雕塑空間的層次，創造空間與生活的自然對話，並為每個設計案規劃出契合生活的人文好宅。</span>
+        <div class="box2"></div>
+
+        <div class="d-flex flex-column align-items-center element4">
+            <h5>代表作品</h5>
+            <p>2020 青川之上</p>
+            <p>2019 甜果托嬰中心</p>
+            <p>2019 靜河流探</p>
+            <p>2018 僑爵</p>
+            <p>2018 琴韻光廊</p>
+        </div>
+    </section>
+
+    <aside class="proRWD wrapper d-flex justify-content-around align-content-center element4">
+        <div class="d-flex flex-column align-items-center ">
+            <h5>獲獎</h5>
+            <p>2019  台灣 台北設計獎｜評審團推薦獎</p>
+            <p>2018  香港 APIDA｜亞太區室內設計大獎</p>
+            <p>2017  台灣 金創獎｜臨時建築類 銅獎</p>
+            <p>2016  台灣 金點獎｜空間類 金點設計大獎</p>
+        </div>
+        <!-- <div>
+            <div class="jointBox">
+                <h5>聯展</h5>
+                <ul class="nav" id="tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#">2018</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">2017</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">2016</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">2015</a></li>
+                    <li class="nav-item"><a class="nav-link noMargin" href="#">2014</a></li>
+                </ul>
+                <div class="tab-content position-relative">
+                    <div class="p-3 position-absolute">
+                        <p>&diams;「靜河流深」，高雄市立美術館，高雄，台灣</p>
+                        <p>&diams;「影像台北」Cho Why，曼谷，泰國</p>
+                    </div>
+                    <div class="p-3 position-absolute">
+                        <p>&diams;「2017黃金町集市－Double Façade: Multiple Ways to Encounter the Other」，橫濱，日本</p>
+                    </div>
+                    <div class="p-3 position-absolute">
+                        <p>&diams;「非常上癮—日常生活美學的再延伸」，銀川當代美術館，銀川，中國</p>
+                    </div>
+                    <div class="p-3 position-absolute">
+                        <p>&diams;「幽默機制」，弔詭畫廊，高雄，台灣</p>
+                    </div>
+                    <div class="p-3 position-absolute">
+                        <p>&diams;「蘋果核」，尊彩藝術中心，台北，台灣</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </aside>
+
+    <section class="wrapper d-flex flex-column align-items-center">
+        <div class="textName d-flex align-items-center">
+            <div class="box contentBoxTop"></div>
+            <h3>作品</h3>
+            <div class="box"></div>
+        </div>
+    </section>
+
+    <div id="gallery" class="wrapper element11">
+        <section id="images-section">
+        </section>
+    </div>
+
+    <footer class="footerRWD wrapper d-flex flex-column">
+        <div class="footerBox borderTop"></div>
+        <article class="footerRWD d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center footerRWD">
+                <a href=""><img class="footerLogo" src="image/logo.png" alt=""></a>
+                <div class="footer-content">
+                    <span class="footerPborder">300 新竹市寶山路200巷11號</span><br>
+                    <span class="footerPborder">上班時間：週一到週五</span><span> am 08:00 - pm 06:00</span><br>
+                    <span>T：+886-3-561-8948</span><br>
+                    <!-- <span>F：+886-2-2825-7344</span><br> -->
+                    <span><a href="">sinwastudio@gmail.com</a></span>
+                </div>
+            </div>
+            <div class="footerIcon-content">
+                <a href="https://www.facebook.com/SinwaBusiness/?ref=page_internal"><img class="footerIcon" src="image/facebook.png" alt=""></a>
+                <a href=""><img class="footerIcon" src="image/instagram.png" alt=""></a>
+                <a href=""><img class="footerIconline" src="image/behance.png" alt=""></a>
+            </div>
+        </article>
+        <div class="footerBox borderDown"></div>
+        <div class="ccResBG ">
+            <span class="ccRes">© 2020 SinWa Group Website Designed by Adam Chung</span>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/jquery.flex-photo-gallery.js"></script>
+    <script src="js/skroll.min.js"></script>
+
+    <script>
+
+        //下拉霸
+        $(".nav-web").click(function () {
+            // console.log("dksfoskfokf")
+            // $(".btn").css("visibility","visible");
+            $("nav aside a").toggleClass("MB2-content")
+        });
+
+        //聯展紀錄
+        $("#tabs li").on("click", function (e) {
+            e.preventDefault()
+            let index = $(this).index()
+            // console.log(index)
+            $(this).find("a").addClass("active")
+                .end().siblings().find("a").removeClass("active");
+            $(".tab-content div").eq(index).fadeIn().siblings().fadeOut()
+        })
+
+
+        //照片效果
+        let imageArray = [
+            {
+                "url": "image/CurlyProject1.jpg",
+                "width": 1057,
+                "height": 683,
+            },
+            {
+                "url": "image/CurlyProject2.jpg",
+                "width": 1024,
+                "height": 683,
+            },
+            {
+                "url": "image/CurlyProject3.jpg",
+                "width": 1024,
+                "height": 768
+            },
+            {
+                "url": "image/CurlyProject4.jpg",
+                "width": 1024,
+                "height": 683
+            },
+            {
+                "url": "image/CurlyProject5.jpg",
+                "width": 1024,
+                "height": 683
+            },
+            {
+                "url": "image/CurlyProject6.jpg",
+                "width": 978,
+                "height": 1024
+            },
+            {
+                "url": "image/CurlyProject7.jpg",
+                "width": 1024,
+                "height": 1024
+            },
+            {
+                "url": "image/CurlyProject8.jpg",
+                "width": 1024,
+                "height": 691
+            },
+            {
+                "url": "image/babysocute.jpg",
+                "width": 1024,
+                "height": 777
+            },
+            {
+                "url": "image/babyplayground3.jpg",
+                "width": 658,
+                "height": 493
+            },
+            {
+                "url": "image/babywoodenwall.jpg",
+                "width": 658,
+                "height": 493
+            },
+            {
+                "url": "image/babyplayground2.jpg",
+                "width": 658,
+                "height": 438
+            },
+            {
+                "url": "image/babyclassroom.jpg",
+                "width": 600,
+                "height": 400
+            },
+            {
+                "url": "image/babycenter2.jpg",
+                "width": 658,
+                "height": 493
+            },
+            {
+                "url": "image/babyroom2.jpg",
+                "width": 600,
+                "height": 452
+            },
+
+
+        ];
+
+        //聯展效果
+        $(function () {
+            $('#gallery').flexPhotoGallery({
+                imageArray: imageArray
+            });
+
+            // $('#gallery').css({
+            //     "box-shadow": "0px 1px 4px 3px rgba(0, 0, 0, 0.25)";
+            // });
+        });
+
+        //過場效果
+        new Skroll()
+            .add(".element", {
+                animation: "fadeInLeft",
+                mobile: true,
+                delay: 400,
+                duration: 1000,
+                easing: "ease",
+                wait: 0,
+                triggerTop: .3,
+                triggerBottom: .6
+
+            })
+            .init();
+
+        new Skroll()
+            .add(".element11", {
+                animation: "fadeInRight",
+                mobile: true,
+                delay: 400,
+                duration: 1000,
+                easing: "ease",
+                wait: 0,
+                triggerTop: .3,
+                triggerBottom: .6
+
+            })
+            .init();
+
+        new Skroll()
+            .add(".element4", {
+                animation: "fadeInUp",
+                mobile: true,
+                delay: 300,
+                duration: 800,
+                easing: "ease",
+                wait: 0,
+                triggerTop: .2,
+                triggerBottom: .8
+
+            })
+            .init();
+
+
+
+    </script>
+
+
+</body>
+
+</html>
